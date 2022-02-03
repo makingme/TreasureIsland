@@ -1,5 +1,6 @@
 package com.happy.world.usage.basic;
 
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -9,7 +10,6 @@ import com.google.gson.Gson;
 import com.happy.world.utils.Out;
 import com.happy.world.vo.extend.Person;
 import com.happy.world.vo.extend.Student;
-
 
 
 public class Classes {
@@ -73,7 +73,6 @@ public class Classes {
 
 	}
 	
-	
 	public static void useInnerClass() {
 		Classes a= new Classes();
 		for(Order o :a.list) {
@@ -92,9 +91,18 @@ public class Classes {
 		Out.print(gson.toJson(p));
 	}
 	
+	public static void gerenateClass() throws Exception {
+		Class cls = Class.forName("com.happy.world.vo.extend.Student");
+		Out.print(cls.toString());
+		Constructor constructor = cls.getConstructor(null); 
+		Out.print(constructor);
+		Student s = (Student) constructor.newInstance(null);
+		Out.print(s.toString());
+	}
 	public static void main(String[] args) throws Exception {
 		Classes.findClassType();
 		Classes.useInnerClass();
 		Classes.extendsClass();
+		Classes.gerenateClass();
 	}
 }

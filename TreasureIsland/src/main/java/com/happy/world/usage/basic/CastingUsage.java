@@ -40,8 +40,17 @@ public class CastingUsage {
 		Out.print(Boolean.parseBoolean(e));
 	}
 	
+	public static void objectCasting() {
+		int a =1;
+		Object o = a;
+		Out.print(o);
+		int b = (int)o;
+		Out.print(b);
+	}
+	
 	public static void main(String[] args) {
 		CastingUsage.mapGeneric();
 		CastingUsage.strToBoolean();
+		CastingUsage.objectCasting();
 	}
 }
