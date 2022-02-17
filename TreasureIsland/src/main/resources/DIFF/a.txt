@@ -1,0 +1,97 @@
+  		UmsSendMsgRedisBean umsSendMsgRedisBean = new UmsSendMsgRedisBean();
+        umsSendMsgRedisBean.setMASTER_TABLE_KIND(umsSendMsgBean.getMASTER_TABLE_KIND().toString());
+        umsSendMsgRedisBean.setSTART_SEND_KIND(umsSendMsgBean.getSTART_SEND_KIND());
+        umsSendMsgRedisBean.setUMS_SEQNO(""+umsSendMsgBean.getUMS_SEQNO());
+        umsSendMsgRedisBean.setRESERVE_SEQNO(""+umsSendMsgBean.getRESERVE_SEQNO());
+        umsSendMsgRedisBean.setSENDERID(umsSendMsgBean.getSENDERID());
+        umsSendMsgRedisBean.setSENDGROUPCODE(umsSendMsgBean.getSENDGROUPCODE());
+
+        umsSendMsgRedisBean.setCUIDS(umsSendMsgBean.getCUIDS());
+        umsSendMsgRedisBean.setMSG_TYPE(umsSendMsgBean.getMSG_TYPE());
+        umsSendMsgRedisBean.setAPP_ID(umsSendMsgBean.getAPP_ID());
+        umsSendMsgRedisBean.setPUSH_MSG(umsSendMsgBean.getPUSH_MSG());
+        umsSendMsgRedisBean.setSOUNDFILE(umsSendMsgBean.getSOUNDFILE());
+        umsSendMsgRedisBean.setBADGENO(umsSendMsgBean.getBADGENO());
+        umsSendMsgRedisBean.setPRIORITY(umsSendMsgBean.getPRIORITY());
+        umsSendMsgRedisBean.setEXT(umsSendMsgBean.getEXT());
+        umsSendMsgRedisBean.setSENDERCODE(umsSendMsgBean.getSENDERCODE());
+        umsSendMsgRedisBean.setSERVICECODE(umsSendMsgBean.getSERVICECODE());
+        umsSendMsgRedisBean.setTARGET_USER_TYPE(umsSendMsgBean.getTARGET_USER_TYPE());
+        umsSendMsgRedisBean.setDB_IN(umsSendMsgBean.getDB_IN());
+        umsSendMsgRedisBean.setPUSH_FAIL_SMS_SEND(umsSendMsgBean.getPUSH_FAIL_SMS_SEND());
+
+        umsSendMsgRedisBean.setTITLE(umsSendMsgBean.getTITLE());
+        umsSendMsgRedisBean.setATTACHFILE(umsSendMsgBean.getATTACHFILE());
+        umsSendMsgRedisBean.setRESERVEDATE(umsSendMsgBean.getRESERVEDATE());
+        umsSendMsgRedisBean.setORG_RESERVEDATE(umsSendMsgBean.getORG_RESERVEDATE());
+        //알림톡/친구톡/RCS/SMS 공통
+        umsSendMsgRedisBean.setCALLBACK_NUM(umsSendMsgBean.getCALLBACK_NUM());
+        //알림톡
+        umsSendMsgRedisBean.setALLIMTOLK_TEMPLCODE(umsSendMsgBean.getALLIMTOLK_TEMPLCODE());
+        umsSendMsgRedisBean.setKKOALT_SVCID(umsSendMsgBean.getKKOALT_SVCID());
+        umsSendMsgRedisBean.setREPLACE_VARS(umsSendMsgBean.getREPLACE_VARS());
+        umsSendMsgRedisBean.setREPLACE_VAR_MAP(umsSendMsgBean.getREPLACE_VAR_MAP());
+        if(msgVars!=null && !"".equals(msgVars)){
+            umsSendMsgRedisBean.setREPLACE_VARS(msgVars);
+            Map<String, String> magVarMap = gson.fromJson(msgVars, Map.class);
+            umsSendMsgRedisBean.setREPLACE_VAR_MAP(magVarMap);
+        }
+        //친구톡
+        umsSendMsgRedisBean.setFRIENDTOLK_MSG(umsSendMsgBean.getFRIENDTOLK_MSG());
+        umsSendMsgRedisBean.setKKOFRT_SVCID(umsSendMsgBean.getKKOFRT_SVCID());
+        umsSendMsgRedisBean.setPLUS_ID(umsSendMsgBean.getPLUS_ID());
+        umsSendMsgRedisBean.setFRT_TEMPL_ID(umsSendMsgBean.getFRT_TEMPL_ID());
+        umsSendMsgRedisBean.setKKO_IMG_PATH(umsSendMsgBean.getKKO_IMG_PATH());
+        umsSendMsgRedisBean.setKKO_IMG_LINK_URL(umsSendMsgBean.getKKO_IMG_LINK_URL());
+        //알림톡/친구톡 공통
+        umsSendMsgRedisBean.setKKO_BTN_LINK1(umsSendMsgBean.getKKO_BTN_LINK1());
+        umsSendMsgRedisBean.setKKO_BTN_LINK2(umsSendMsgBean.getKKO_BTN_LINK2());
+        umsSendMsgRedisBean.setKKO_BTN_LINK3(umsSendMsgBean.getKKO_BTN_LINK3());
+        umsSendMsgRedisBean.setKKO_BTN_LINK4(umsSendMsgBean.getKKO_BTN_LINK4());
+        umsSendMsgRedisBean.setKKO_BTN_LINK5(umsSendMsgBean.getKKO_BTN_LINK5());
+        //SMS
+        umsSendMsgRedisBean.setSMS_TITLE(umsSendMsgBean.getSMS_TITLE());
+        umsSendMsgRedisBean.setSMS_MSG(umsSendMsgBean.getSMS_MSG());
+        umsSendMsgRedisBean.setSMS_TEMPL_ID(umsSendMsgBean.getSMS_TEMPL_ID());
+        umsSendMsgRedisBean.setMMS_IMGURL(umsSendMsgBean.getMMS_IMGURL());
+        //RCS
+        umsSendMsgRedisBean.setRCS_TITLE(umsSendMsgBean.getRCS_TITLE());
+        umsSendMsgRedisBean.setRCS_MSG(umsSendMsgBean.getRCS_MSG());
+        umsSendMsgRedisBean.setIMG_GROUP_KEY(umsSendMsgBean.getIMG_GROUP_KEY());
+        umsSendMsgRedisBean.setIMG_GROUP_CNT(umsSendMsgBean.getIMG_GROUP_CNT());
+        umsSendMsgRedisBean.setRCS_IMG_URL(umsSendMsgBean.getRCS_IMG_URL());
+        if(umsSendMsgBean.getRCS_IMG_PATH()!=null && umsSendMsgBean.getRCS_IMG_PATH().size()>0) {
+            ArrayList<String> rcsImgPathList = new ArrayList<String>();
+            rcsImgPathList.addAll(umsSendMsgBean.getRCS_IMG_PATH());
+            umsSendMsgRedisBean.setRCS_IMG_PATH(rcsImgPathList);
+        }
+
+        umsSendMsgRedisBean.setRCS_TEMPID(umsSendMsgBean.getRCS_TEMPID());
+        umsSendMsgRedisBean.setBRAND_ID(umsSendMsgBean.getBRAND_ID());
+        umsSendMsgRedisBean.setRCS_OBJECT(umsSendMsgBean.getRCS_OBJECT());
+        umsSendMsgRedisBean.setBTN_OBJECT(umsSendMsgBean.getBTN_OBJECT());
+        umsSendMsgRedisBean.setRCS_BTN_CNT(umsSendMsgBean.getRCS_BTN_CNT());
+        umsSendMsgRedisBean.setRCS_BTN_INSERT_TYPE(umsSendMsgBean.getRCS_BTN_INSERT_TYPE());
+        umsSendMsgRedisBean.setRCS_BTN_TEXT_1(umsSendMsgBean.getRCS_BTN_TEXT_1());
+        umsSendMsgRedisBean.setRCS_BTN_TYPE_1(umsSendMsgBean.getRCS_BTN_TYPE_1());
+        umsSendMsgRedisBean.setRCS_BTN_CONTENTS_1(umsSendMsgBean.getRCS_BTN_CONTENTS_1());
+        umsSendMsgRedisBean.setRCS_BTN_TEXT_2(umsSendMsgBean.getRCS_BTN_TEXT_2());
+        umsSendMsgRedisBean.setRCS_BTN_TYPE_2(umsSendMsgBean.getRCS_BTN_TYPE_2());
+        umsSendMsgRedisBean.setRCS_BTN_CONTENTS_2(umsSendMsgBean.getRCS_BTN_CONTENTS_2());
+        umsSendMsgRedisBean.setRCS_BTN_TEXT_3(umsSendMsgBean.getRCS_BTN_TEXT_3());
+        umsSendMsgRedisBean.setRCS_BTN_TYPE_3(umsSendMsgBean.getRCS_BTN_TYPE_3());
+        umsSendMsgRedisBean.setRCS_BTN_CONTENTS_3(umsSendMsgBean.getRCS_BTN_CONTENTS_3());
+
+        umsSendMsgRedisBean.setSEND_MACRO_CODE(umsSendMsgBean.getSEND_MACRO_CODE());
+
+        umsSendMsgRedisBean.setVAR1(umsSendMsgBean.getVAR1());
+        umsSendMsgRedisBean.setVAR2(umsSendMsgBean.getVAR2());
+        umsSendMsgRedisBean.setVAR3(umsSendMsgBean.getVAR3());
+        umsSendMsgRedisBean.setVAR4(umsSendMsgBean.getVAR4());
+        umsSendMsgRedisBean.setVAR5(umsSendMsgBean.getVAR5());
+        umsSendMsgRedisBean.setVAR6(umsSendMsgBean.getVAR6());
+        umsSendMsgRedisBean.setVAR7(umsSendMsgBean.getVAR7());
+        umsSendMsgRedisBean.setVAR8(umsSendMsgBean.getVAR8());
+        umsSendMsgRedisBean.setVAR9(umsSendMsgBean.getVAR9());
+
+        return umsSendMsgRedisBean;

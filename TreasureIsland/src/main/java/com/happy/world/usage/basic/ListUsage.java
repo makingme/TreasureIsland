@@ -1,7 +1,10 @@
 package com.happy.world.usage.basic;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.happy.world.utils.Out;
 
@@ -32,9 +35,20 @@ public class ListUsage {
 		Out.print(list1.toString());
 	}
 	
+	public static void initList() {
+		Map<String, String> map = new HashMap<String, String>(5);
+		map.put("1", "1");
+		map.put("2", "2");
+		List<Map<String, String>> list1 = new ArrayList<Map<String,String>>(List.of(map));
+		List<Map<String, String>> list2 = new ArrayList<Map<String,String>>(Arrays.asList(map));
+		Out.print(list1.toString());
+		Out.print(list2.toString());
+	}
+	
 	public static void main(String[] args) {
 		ListUsage.arrayLength();
 		ListUsage.addList();
+		ListUsage.initList();
 	}
 }
 
