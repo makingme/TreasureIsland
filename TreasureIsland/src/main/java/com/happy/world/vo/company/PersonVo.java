@@ -15,4 +15,5 @@ public class PersonVo {
 	private CompanyVo company;
 	private DepartmentVo department;
 	
+	
 }

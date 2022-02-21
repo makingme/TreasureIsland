@@ -14,4 +14,7 @@ public class Student extends Person{
 	
 	String group;
 	String grade;
+	
+	
+	
 }
