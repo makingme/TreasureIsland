@@ -6,9 +6,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.reflect.TypeToken;
 import com.happy.world.utils.Out;
 
 public class ListUsage {
+	
+	public static final Gson gson = new Gson();
 	public static void arrayLength() {
 		String[] s = new String[0];
 		String[] ss = new String[100];
@@ -45,10 +54,49 @@ public class ListUsage {
 		Out.print(list2.toString());
 	}
 	
+	
+	public static void stringToList() {
+		JSONArray jarray = new JSONArray();
+		JSONObject jobj1 = new JSONObject();
+		JSONObject jobj2 = new JSONObject();
+		jobj1.put("1", "1");
+		jobj1.put("2", "2");
+		jobj2.put("10", "10");
+		jobj2.put("20", "20");
+		jarray.add(jobj1);
+		jarray.add(jobj2);
+		String sArray = jarray.toJSONString();
+		Out.print(sArray);
+		List<String> list1 = Arrays.asList(sArray);
+		Out.print(list1.size());
+		for(String item : list1) {
+			Out.print(item);
+		}
+		JsonArray jsonArray= gson.fromJson(sArray,  new TypeToken<JsonArray>(){}.getType());
+		Out.print(jsonArray.size());
+		for(JsonElement item : jsonArray) {
+			Out.print(item.toString());
+		}
+		List<Object> list2 = gson.fromJson(sArray,   new TypeToken<List<Object>>(){}.getType());
+		Out.print(list2.size());
+		for(Object item : list2) {
+			Out.print(item.toString());
+		}
+		
+		List list3 = gson.fromJson(sArray, List.class);
+		Out.print(list3.size());
+		for(Object item : list3) {
+			Out.print(item.toString());
+		}
+	}
 	public static void main(String[] args) {
 		ListUsage.arrayLength();
 		ListUsage.addList();
 		ListUsage.initList();
+		Out.cutLine();
+		ListUsage.stringToList();
+		
 	}
 }
+
 
