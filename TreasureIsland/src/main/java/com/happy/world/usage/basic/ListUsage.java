@@ -84,6 +84,7 @@ public class ListUsage {
 		}
 		
 		List list3 = gson.fromJson(sArray, List.class);
+
 		Out.print(list3.size());
 		for(Object item : list3) {
 			Out.print(item.toString());

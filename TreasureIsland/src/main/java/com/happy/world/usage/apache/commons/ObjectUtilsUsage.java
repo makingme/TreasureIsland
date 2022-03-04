@@ -25,6 +25,9 @@ public class ObjectUtilsUsage {
 		List<String> list = new ArrayList<String>();
 		Out.print(ObjectUtils.isEmpty(list));
 		
+		String[] strArray = {};
+		Out.print(ObjectUtils.isEmpty(strArray));
+		
 	}
 	
 	
