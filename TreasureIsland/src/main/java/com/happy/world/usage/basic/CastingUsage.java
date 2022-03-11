@@ -40,6 +40,14 @@ public class CastingUsage {
 		Out.print(Boolean.parseBoolean(e));
 	}
 	
+	public static void strToInt() {
+		final String a ="", b="abc", c="1a1";
+		
+		Out.print(Integer.valueOf(a));
+		Out.print(Integer.valueOf(b));
+		
+	}
+	
 	public static void objectCasting() {
 		int a =1;
 		Object o = a;
@@ -52,5 +60,6 @@ public class CastingUsage {
 		CastingUsage.mapGeneric();
 		CastingUsage.strToBoolean();
 		CastingUsage.objectCasting();
+		CastingUsage.strToInt();
 	}
 }

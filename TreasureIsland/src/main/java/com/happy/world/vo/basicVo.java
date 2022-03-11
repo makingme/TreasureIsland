@@ -39,25 +39,5 @@ public class basicVo {
 	private String name;
 	
 	private String age;
-	
-	
-	
-	@Override
-	public String toString() {
-		String msg= "RCSTemplateVo INFO\n";
-		Field[] fields = this.getClass().getDeclaredFields();
-		for(Field f : fields) {
-			try {
-				String value = f.get(this) == null?"": f.get(this)+"=\n";
-				msg+=f.getName()+":"+f.get(value);
-			} catch (IllegalArgumentException e) {
-				e.printStackTrace();
-				return "";
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
-				return "";
-			}
-		}
-		return msg;
-	}
+		
 }
