@@ -8,7 +8,7 @@ import java.util.Map;
 
 import com.google.gson.Gson;
 import com.happy.world.utils.Out;
-import com.happy.world.vo.basicVo;
+import com.happy.world.vo.BasicVo;
 import com.happy.world.vo.extend.Person;
 import com.happy.world.vo.extend.Student;
 

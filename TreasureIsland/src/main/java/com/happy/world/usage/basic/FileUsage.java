@@ -1,8 +1,12 @@
 package com.happy.world.usage.basic;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileFilter;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -60,12 +64,63 @@ public class FileUsage {
 		}
 	}
 	
+	private static void writeStringToFile1() throws IOException {
+		StringBuilder strb = new StringBuilder();
+		String dummy = "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890\n";
+		for(int i=0; i<5000000;i++) {
+			strb.append(dummy);
+		}
+		try(BufferedWriter writer = new BufferedWriter(new FileWriter("D:\\TEST\\dummy1.txt"));){
+			writer.write(strb.toString());
+			writer.flush();			
+		}
+		
+	}
+	
+	private static void writeStringToFile2() throws IOException {
+		StringBuilder strb = new StringBuilder();
+		String dummy = "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890\n";
+		for(int i=0; i<5000000;i++) {
+			strb.append(dummy);
+		}
+		try(FileOutputStream ofs = new FileOutputStream("D:\\TEST\\dummy2.txt");){
+			ofs.write(strb.toString().getBytes());			
+		}
+		
+	}
+	
+	private static void writeStringToFile3() throws IOException {
+		StringBuilder strb = new StringBuilder();
+		String dummy = "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890\n";
+		for(int i=0; i<5000000;i++) {
+			strb.append(dummy);
+		}
+		Out.print(strb.toString().getBytes().length);
+		try(RandomAccessFile raf= new RandomAccessFile("D:\\TEST\\dummy3.txt","rw");){
+			raf.writeBytes(strb.toString());			
+		}
+		
+		
+
+		
+	}
+	
 	
 	public static void main(String[] args) throws Exception {
 		FileUsage.listFiles();
 		FileUsage.getFileCount();
 		FileUsage.getFileCount8();
 		FileUsage.getFileList8();
+		long time = System.currentTimeMillis();
+		FileUsage.writeStringToFile1();
+		long timed = System.currentTimeMillis();
+		Out.print(timed - time);
+		FileUsage.writeStringToFile2();
+		time = System.currentTimeMillis();
+		Out.print(time-timed);
+		FileUsage.writeStringToFile3();
+		timed = System.currentTimeMillis();
+		Out.print(timed - time);
 	}
 	
 	private static int getFiles(File f) {

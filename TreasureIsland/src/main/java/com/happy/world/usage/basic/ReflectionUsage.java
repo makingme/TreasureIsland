@@ -3,10 +3,10 @@ package com.happy.world.usage.basic;
 import java.lang.reflect.Field;
 
 import com.happy.world.utils.Out;
-import com.happy.world.vo.basicVo;
+import com.happy.world.vo.BasicVo;
 
 public class ReflectionUsage {
-	static basicVo b= new basicVo("honggildoing","100");
+	static BasicVo b= new BasicVo("honggildoing","100");
 	public static void printField(Object object, String name) {
 		
 		String msg= name+" INFO\n";

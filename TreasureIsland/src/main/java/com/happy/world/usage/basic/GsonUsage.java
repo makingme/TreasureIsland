@@ -10,7 +10,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import com.happy.world.utils.Out;
-import com.happy.world.vo.basicVo;
+import com.happy.world.vo.BasicVo;
 
 public class GsonUsage {
 	
@@ -26,11 +26,29 @@ public class GsonUsage {
 		String[] array = {"a","b","c"};
 		String str2 = Arrays.toString(array);
 		String str3 = gson.toJson(str2).toString();
-		basicVo b = new basicVo(str3, str3);
+		BasicVo b = new BasicVo(str3, str3);
 		Map<String, List<String>> sendUsersMap = gson.fromJson(b.getName(), Map.class); 
 	}
 	
 	public static void toJson() {
+		List<String> list0 = new ArrayList<String>(5);	
+		BasicVo vo1 = new BasicVo("anna", "11");
+		BasicVo vo2 = new BasicVo("anna", "11");
+		String str0 = gson.toJson(vo1);
+		list0.add(str0);
+		str0 = gson.toJson(vo2);
+		list0.add(str0);
+		Out.print(list0.toString());
+		
+		List<BasicVo> list00 = new ArrayList<BasicVo>(5);	
+		BasicVo vo11 = new BasicVo("anna", "11");
+		BasicVo vo22 = new BasicVo("anna", "11");
+		list00.add(vo11);
+		list00.add(vo22);
+		String str00 = gson.toJson(list00);
+		Out.print(str00);
+		
+		
 		String[] array = {"a","b","c"};
 		List<String> list = new ArrayList<String>(5);
 		list.add("a");list.add("b");list.add("c");
@@ -57,7 +75,12 @@ public class GsonUsage {
 	}
 	
 	public static void main(String[] args) {
-		GsonUsage.fromJsonException();
-		GsonUsage.toJson();
+		try {			
+			GsonUsage.fromJsonException();	
+		}catch(Exception e) { Out.print(e.getMessage()); }
+		try {				
+			GsonUsage.toJson();
+		}catch(Exception e) { Out.print(e.getMessage()); }
+		
 	}
 }

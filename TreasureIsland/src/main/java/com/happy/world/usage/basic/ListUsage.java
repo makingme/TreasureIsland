@@ -14,7 +14,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 import com.happy.world.utils.Out;
-import com.happy.world.vo.basicVo;
+import com.happy.world.vo.BasicVo;
 
 public class ListUsage {
 	
@@ -46,14 +46,14 @@ public class ListUsage {
 	}
 	
 	public static void addObjectList() {
-		List<basicVo> list1 = new ArrayList<basicVo>(2);
+		List<BasicVo> list1 = new ArrayList<BasicVo>(2);
 
-		basicVo vo = new basicVo("1","0");
+		BasicVo vo = new BasicVo("1","0");
 		list1.add(vo);
 		vo.setAge("100");
 		list1.add(vo);
 		int index =0;
-		for(basicVo v : list1) {
+		for(BasicVo v : list1) {
 			index++;
 			ReflectionUsage.printField(v, "vo"+index);
 		}

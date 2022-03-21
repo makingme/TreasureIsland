@@ -1,11 +1,9 @@
 package com.happy.world.vo;
 
-import java.lang.reflect.Field;
-
-public class basicVo {
+public class BasicVo {
 	
 	
-	public basicVo(String name, String age) {
+	public BasicVo(String name, String age) {
 		this.name = name;
 		this.age = age;
 	}
