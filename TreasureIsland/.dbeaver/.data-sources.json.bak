@@ -1,17 +1,17 @@
 {
 	"folders": {},
 	"connections": {
-		"mysql8-17e22ecbf76-50467168e1ebf86": {
+		"mariaDB-17e2e81f346-66c218b986b2cfe9": {
 			"provider": "mysql",
-			"driver": "mysql8",
-			"name": "dmaru",
+			"driver": "mariaDB",
+			"name": "makingme",
 			"save-password": true,
 			"read-only": false,
 			"configuration": {
-				"host": "133.186.223.114",
-				"port": "2001",
-				"database": "dmaru",
-				"url": "jdbc:mysql://133.186.223.114:2001/dmaru",
+				"host": "121.161.253.13",
+				"port": "3307",
+				"database": "makingme",
+				"url": "jdbc:mysql://121.161.253.13:3307/makingme",
 				"home": "mysql_client",
 				"type": "dev",
 				"auth-model": "native",

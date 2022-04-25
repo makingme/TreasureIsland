@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.happy.world.utils.Out;
 
 public class StringUsage {
@@ -17,6 +19,11 @@ public class StringUsage {
 	public static void throwOutBoundException() {
 		final String dummy = "";
 		Out.print(dummy.substring(dummy.length()-1));
+	}
+	
+	public static void insert() {
+		String dummy = "12S";
+		Out.print(new StringBuffer(dummy).insert(2, "P").toString()); 
 	}
 	
 	public static void typeToString() {
@@ -53,6 +60,26 @@ public class StringUsage {
 		String str1 = "abcde/";
 		if(str1.endsWith("/"))Out.print("withs");
 	}
+	
+	public static void capitalize() {
+		String lower = "abc";
+		String upper = "ABC";
+		Out.print(StringUtils.capitalize(lower));
+	}
+	
+	public static void split() {
+		String dummy = "0000P";
+		String dummy1 = "0000P>0000A";
+		String[] array = dummy.split("");
+		String[] array1 = dummy.split(">");
+		String[] array2 = dummy1.split(">");
+		Out.print(array.length);
+		Out.print(array1.length);
+		Out.print(array2.length);
+		for(String s:array) {
+			Out.print(s);
+		}
+	}
 	public static void main(String[] args) {
 		StringUsage.substring();
 		//StringUsage.throwOutBoundException();
@@ -62,6 +89,12 @@ public class StringUsage {
 		StringUsage.replace();
 		Out.cutLine();
 		StringUsage.withs();
+		Out.cutLine();
+		StringUsage.capitalize();
+		Out.cutLine();
+		StringUsage.split();
+		Out.cutLine();
+		StringUsage.insert();
 	}
 }
 

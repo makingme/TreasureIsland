@@ -51,7 +51,11 @@ public class SimpleJson {
 		jarray.add(btns1);
 		jarray.add(btns2);
 		Out.print(jarray.toJSONString());
-		
+		List<Object> list = gson.fromJson(jarray.toJSONString(), List.class);
+		Out.print(list.toString());
+		for(Object str  : list) {
+			Out.print(str.toString());
+		}
 		
 	}
 	
