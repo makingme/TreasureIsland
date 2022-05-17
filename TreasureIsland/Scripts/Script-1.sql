@@ -1,0 +1,7 @@
+CREATE TABLE TEST_MEMBER (
+	 SVC_ID VARCHAR(50)
+	,USE_YN VARCHAR(50)
+);
+
+delete from TEST_MEMBER;
+select * from TEST_MEMBER;

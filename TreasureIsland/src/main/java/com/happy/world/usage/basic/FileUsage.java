@@ -10,6 +10,7 @@ import java.io.RandomAccessFile;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -99,28 +100,39 @@ public class FileUsage {
 		try(RandomAccessFile raf= new RandomAccessFile("D:\\TEST\\dummy3.txt","rw");){
 			raf.writeBytes(strb.toString());			
 		}
+	}
+	
+	public static void filesMove() throws IOException {
+		String source ="D:\\TEST\\sample_test\\test_senario_simple.txt";
+		String target = "D:\\TEST\\temp\\";
+		Path p = Paths.get(source);
 		
+		Path pp = Paths.get(target+p.getFileName());
+		Out.print(p.getFileName());
+		//Files.move(p, pp);
 		
-
-		
+		//Files.move(p, pp, StandardCopyOption.REPLACE_EXISTING);
 	}
 	
 	
 	public static void main(String[] args) throws Exception {
-		FileUsage.listFiles();
-		FileUsage.getFileCount();
-		FileUsage.getFileCount8();
-		FileUsage.getFileList8();
-		long time = System.currentTimeMillis();
-		FileUsage.writeStringToFile1();
-		long timed = System.currentTimeMillis();
-		Out.print(timed - time);
-		FileUsage.writeStringToFile2();
-		time = System.currentTimeMillis();
-		Out.print(time-timed);
-		FileUsage.writeStringToFile3();
-		timed = System.currentTimeMillis();
-		Out.print(timed - time);
+//		FileUsage.listFiles();
+//		FileUsage.getFileCount();
+//		FileUsage.getFileCount8();
+//		FileUsage.getFileList8();
+		FileUsage.filesMove();
+//		long time = System.currentTimeMillis();
+//		FileUsage.writeStringToFile1();
+//		long timed = System.currentTimeMillis();
+//		Out.print(timed - time);
+//		FileUsage.writeStringToFile2();
+//		time = System.currentTimeMillis();
+//		Out.print(time-timed);
+//		FileUsage.writeStringToFile3();
+//		timed = System.currentTimeMillis();
+//		Out.print(timed - time);
+		
+		
 	}
 	
 	private static int getFiles(File f) {

@@ -11,8 +11,10 @@ import com.happy.world.utils.Out;
 public class StringUsage {
 	public static void substring() {
 		final String dummy="1234567";
+		final String dummy1="123.json";
 		Out.print(dummy.substring(dummy.length()-1));
 		Out.print(dummy.substring(dummy.length()-2, dummy.length()-1));
+		Out.print(dummy1.substring(0, dummy1.lastIndexOf(".")));
 		Out.print();
 	}
 	
@@ -70,16 +72,28 @@ public class StringUsage {
 	public static void split() {
 		String dummy = "0000P";
 		String dummy1 = "0000P>0000A";
+		String dummy2 = "test ";
 		String[] array = dummy.split("");
 		String[] array1 = dummy.split(">");
 		String[] array2 = dummy1.split(">");
+		String[] array3 = dummy2.split(" ");
 		Out.print(array.length);
 		Out.print(array1.length);
 		Out.print(array2.length);
-		for(String s:array) {
+		Out.print(array3.length);
+		for(String s:array3) {
 			Out.print(s);
 		}
+		
 	}
+	
+	public static void format() {
+		String num ="0101234";
+		for(int i =0; i<1000; i++) {
+			Out.print(num+String.format("%04d", i));
+		}
+	}
+	
 	public static void main(String[] args) {
 		StringUsage.substring();
 		//StringUsage.throwOutBoundException();
@@ -94,7 +108,12 @@ public class StringUsage {
 		Out.cutLine();
 		StringUsage.split();
 		Out.cutLine();
-		StringUsage.insert();
+		//StringUsage.insert();
+		Out.cutLine();
+		//StringUsage.format();
+		System.out.println(999/1000);
 	}
 }
+
+
 

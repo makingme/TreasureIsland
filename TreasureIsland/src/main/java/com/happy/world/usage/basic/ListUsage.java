@@ -3,6 +3,7 @@ package com.happy.world.usage.basic;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -106,14 +107,18 @@ public class ListUsage {
 		}
 	}
 	
+	public static void remove() {
+		List<String> list = new ArrayList<String>(3);
+		list.add("1");list.add("2");list.add("3");
+		
+		for(String s : list) {
+			if(s.equals("1"))list.remove(s);
+		}
+	}
+	
 	public static void main(String[] args) {
-		ListUsage.arrayLength();
-		ListUsage.addList();
-		ListUsage.initList();
-		Out.cutLine();
-		//ListUsage.stringToList();
-		Out.cutLine();
-		ListUsage.addObjectList();
+
+		ListUsage.remove();
 		
 	}
 }
