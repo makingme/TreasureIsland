@@ -1,5 +1,6 @@
 package com.happy.world.usage.basic;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileFilter;
@@ -7,16 +8,21 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
+import com.google.gson.Gson;
 import com.happy.world.utils.Out;
 
 public class FileUsage {
+	public static final Gson gson = new Gson();
 	
 	private static void listFiles() {
 		File[] files= new File("D:\\TEST\\ex1").listFiles(new FileFilter() {
@@ -102,6 +108,23 @@ public class FileUsage {
 		}
 	}
 	
+	private static void readFile1() throws Exception{
+		String filePath = "D:\\TEST\\read.txt";
+		
+		try(BufferedReader reader = Files.newBufferedReader(Paths.get(filePath), Charset.forName("UTF-8"));){
+			String line = null;
+			while((line = reader.readLine()) != null) {
+				Out.print(line);
+				Map<String, String> map = gson.fromJson(line, Map.class);
+				for(Entry<String, String> e: map.entrySet()) {
+					System.out.println(e.getKey()+":"+e.getValue());
+				}
+			}
+		}catch(IOException e) {
+			
+		}
+	}
+	
 	public static void filesMove() throws IOException {
 		String source ="D:\\TEST\\sample_test\\test_senario_simple.txt";
 		String target = "D:\\TEST\\temp\\";
@@ -120,7 +143,7 @@ public class FileUsage {
 //		FileUsage.getFileCount();
 //		FileUsage.getFileCount8();
 //		FileUsage.getFileList8();
-		FileUsage.filesMove();
+//		FileUsage.filesMove();
 //		long time = System.currentTimeMillis();
 //		FileUsage.writeStringToFile1();
 //		long timed = System.currentTimeMillis();
@@ -131,7 +154,7 @@ public class FileUsage {
 //		FileUsage.writeStringToFile3();
 //		timed = System.currentTimeMillis();
 //		Out.print(timed - time);
-		
+		FileUsage.readFile1();
 		
 	}
 	

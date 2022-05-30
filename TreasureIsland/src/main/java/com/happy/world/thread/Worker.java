@@ -6,6 +6,7 @@ public class Worker extends Thread{
 	public Worker(String threadName, WorkerManager allotterManager) { 
 		this.setName(threadName);
 		this.manager = allotterManager;
+		this.setDaemon(false);
 	}
 
 	@Override
@@ -13,9 +14,9 @@ public class Worker extends Thread{
 		for(int i =1; i<=10000; i++) {
 			String number = "0100000"+String.format("%04d", i);
 			String provider = manager.getProvider("SMS", number);
-			//System.out.println("["+this.getName()+"]\t"+number+"\t"+provider);
+			System.out.println("["+this.getName()+"]\t"+number+"\t"+provider);
 			try {
-				//sleep(10);
+				sleep(10);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

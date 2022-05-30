@@ -12,9 +12,13 @@ public class StringUsage {
 	public static void substring() {
 		final String dummy="1234567";
 		final String dummy1="123.json";
+		String ext = "json";
+		Out.print(dummy.substring(0, 6));
+		Out.print(dummy.substring(6, 7));
 		Out.print(dummy.substring(dummy.length()-1));
 		Out.print(dummy.substring(dummy.length()-2, dummy.length()-1));
-		Out.print(dummy1.substring(0, dummy1.lastIndexOf(".")));
+		Out.print(dummy1.substring(0, dummy1.lastIndexOf("."))+ dummy1.substring(dummy1.lastIndexOf(".")));
+		Out.print(dummy1.substring(0, dummy1.lastIndexOf(ext)));
 		Out.print();
 	}
 	

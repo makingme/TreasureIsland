@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.attribute.FileTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,7 +28,32 @@ public class PathUsage {
 		Out.print(pp.isAbsolute());
 	}
 	
+	public static void filePath() {
+		String path = "D:\\TEST\\test1223\\test.txt";
+		String path2 = "D:\\TEST\\test1223\\";
+		Path p = Paths.get(path);
+		Path p2 = Paths.get(path2);
+		Out.print(p.getParent());
+		Out.print(p2.getParent());
+		Out.print(p2.toString()+File.separator);
+		
+		Out.print(p.getFileSystem());
+		Out.print(p.getRoot());		
+	}
+	
+	public static void updateModifiedTime() throws IOException {
+		String path = "D:\\TEST\\FETCHER\\test.txt";
+		Path p = Paths.get(path);
+		Out.print(Files.getLastModifiedTime(p));
+		FileTime f = FileTime.fromMillis(System.currentTimeMillis());
+		Files.setLastModifiedTime(p, f);
+		Out.print(Files.getLastModifiedTime(p));
+	}
+	
 	public static void main(String[] args) throws Exception {
-		PathUsage.isExsist();
+		//PathUsage.isExsist();
+		//PathUsage.filePath();;
+		PathUsage.updateModifiedTime();
 	}
 }
+

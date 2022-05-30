@@ -177,7 +177,13 @@
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache</artifactId>
             <version>2.7.5</version>
-        </dependency>		
+        </dependency>
+        <!-- OpenCsv Library JAVA8 -->
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>5.6</version>
+		</dependency>		
 	</dependencies>
   
 </project>
