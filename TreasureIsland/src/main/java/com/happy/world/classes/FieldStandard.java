@@ -9,5 +9,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 public @interface FieldStandard {
 	public boolean required() default true;
-	public Class<?> classType() default String.class;
+	public int MAX() default 0;
+	public int MIN() default 0;
 }

@@ -56,10 +56,18 @@ public class CastingUsage {
 		Out.print(b);
 	}
 	
+	public static void strToLong() {
+		final String a ="123456789012300";
+		Long aa = Long.parseLong(a);
+		Out.print(aa);
+		
+	}
+	
 	public static void main(String[] args) {
-		CastingUsage.mapGeneric();
-		CastingUsage.strToBoolean();
-		CastingUsage.objectCasting();
-		CastingUsage.strToInt();
+//		CastingUsage.mapGeneric();
+//		CastingUsage.strToBoolean();
+//		CastingUsage.objectCasting();
+//		CastingUsage.strToInt();
+		CastingUsage.strToLong();
 	}
 }

@@ -85,9 +85,8 @@ public class StringUsage {
 		Out.print(array1.length);
 		Out.print(array2.length);
 		Out.print(array3.length);
-		for(String s:array3) {
-			Out.print(s);
-		}
+		String[] array4 = dummy.split("_");
+		Out.print(array4[0]);
 		
 	}
 	
@@ -99,23 +98,23 @@ public class StringUsage {
 	}
 	
 	public static void main(String[] args) {
-		StringUsage.substring();
+//		StringUsage.substring();
 		//StringUsage.throwOutBoundException();
-		Out.cutLine();
-		StringUsage.typeToString();
-		Out.cutLine();
-		StringUsage.replace();
-		Out.cutLine();
-		StringUsage.withs();
-		Out.cutLine();
-		StringUsage.capitalize();
-		Out.cutLine();
+//		Out.cutLine();
+//		StringUsage.typeToString();
+//		Out.cutLine();
+//		StringUsage.replace();
+//		Out.cutLine();
+//		StringUsage.withs();
+//		Out.cutLine();
+//		StringUsage.capitalize();
+//		Out.cutLine();
 		StringUsage.split();
 		Out.cutLine();
 		//StringUsage.insert();
 		Out.cutLine();
 		//StringUsage.format();
-		System.out.println(999/1000);
+		//System.out.println(999/1000);
 	}
 }
 
