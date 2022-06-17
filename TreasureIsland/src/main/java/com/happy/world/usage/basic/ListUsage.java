@@ -2,6 +2,9 @@ package com.happy.world.usage.basic;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -110,15 +113,43 @@ public class ListUsage {
 	public static void remove() {
 		List<String> list = new ArrayList<String>(3);
 		list.add("1");list.add("2");list.add("3");
-		
+		Out.print(list.get(0));
+		String d = list.remove(0);
+		Out.print(d);
 		for(String s : list) {
-			if(s.equals("1"))list.remove(s);
+			//if(s.equals("1"))list.remove(s);
+		}
+	}
+	
+	public static void sort() {
+		List<String> list = new ArrayList<String>(3);
+		list.add("1_abc");
+		list.add("109_test");
+		list.add("9_1213");
+		list.add("10_1213");
+		list.add("108_1213");
+		list.add("2_1213");
+		list.add("9_1213");
+		list.add("9_3813");
+		Collections.sort(list, new Comparator<String>() {
+
+			@Override
+			public int compare(String o1, String o2) {
+				long num1 = Long.parseLong(o1.split("_")[0]);
+				long num2 = Long.parseLong(o2.split("_")[0]);
+				return num1>num2?1:-1;
+			}
+		});
+		
+		for(int i=0; i<list.size(); i++) {
+			System.out.println(i+"번째 :"+list.get(i));
 		}
 	}
 	
 	public static void main(String[] args) {
-
-		ListUsage.remove();
+		//addList();
+		sort();
+		//ListUsage.remove();
 		
 	}
 }

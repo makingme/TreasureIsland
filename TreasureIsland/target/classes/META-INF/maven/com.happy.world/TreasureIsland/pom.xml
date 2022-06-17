@@ -1,9 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.happy.world</groupId>
-  <artifactId>TreasureIsland</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.happy.world</groupId>
+	<artifactId>TreasureIsland</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
@@ -14,11 +16,18 @@
 		<version.mybatis.spring>1.2.1</version.mybatis.spring>
 		<!-- LOGBACK -->
 		<version.logback>1.2.1</version.logback>
-	
+
 	</properties>
 
 	<dependencies>
-		<!-- GRAAL Script Engine-->
+		<!-- FILE DB -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>2.1.214</version>
+		</dependency>
+
+		<!-- GRAAL Script Engine -->
 		<dependency>
 			<groupId>org.graalvm.js</groupId>
 			<artifactId>js</artifactId>
@@ -29,8 +38,8 @@
 			<artifactId>js-scriptengine</artifactId>
 			<version>20.3.0</version>
 		</dependency>
-		
-		<!-- JSON Library-->
+
+		<!-- JSON Library -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
@@ -40,15 +49,15 @@
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
 			<version>1.1.1</version>
-		</dependency>		
-		
+		</dependency>
+
 		<!-- commonUtil logging interface -->
 		<dependency>
-		    <groupId>org.slf4j</groupId>
-		    <artifactId>slf4j-api</artifactId>
-		    <version>1.7.32</version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.32</version>
 		</dependency>
-		
+
 		<!-- slf4j implemented logback -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -61,7 +70,7 @@
 			<artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
 			<version>1.16</version>
 		</dependency>
-		
+
 		<!--스프링 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -88,7 +97,7 @@
 			<artifactId>spring-tx</artifactId>
 			<version>${version.spring}</version>
 		</dependency>
-		
+
 		<!-- MyBatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -100,65 +109,65 @@
 			<artifactId>mybatis-spring</artifactId>
 			<version>${version.mybatis.spring}</version>
 		</dependency>
-		
+
 		<!-- Apache commons-lang3 Library -->
 		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>commons-lang3</artifactId>
-		    <version>3.12.0</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.12.0</version>
 		</dependency>
-		
+
 		<!-- Apache commons config -->
 		<dependency>
 			<groupId>commons-configuration</groupId>
 			<artifactId>commons-configuration</artifactId>
 			<version>1.6</version>
 		</dependency>
-		
+
 		<!-- Apache HTTP Library -->
 		<dependency>
-		    <groupId>org.apache.httpcomponents.client5</groupId>
-		    <artifactId>httpclient5</artifactId>
-		    <version>5.1.2</version>
+			<groupId>org.apache.httpcomponents.client5</groupId>
+			<artifactId>httpclient5</artifactId>
+			<version>5.1.2</version>
 		</dependency>
-		
+
 		<!-- Apache commons-validator Library -->
 		<dependency>
-		    <groupId>commons-validator</groupId>
-		    <artifactId>commons-validator</artifactId>
-		    <version>1.7</version>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>1.7</version>
 		</dependency>
-		
+
 		<!-- Apache commons-dbcp -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
 			<version>2.8.0</version>
 		</dependency>
-		
-		<!-- Oracle JDBC -->	
+
+		<!-- Oracle JDBC -->
 		<dependency>
 			<groupId>com.oracle.ojdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
 			<version>19.3.0.0</version>
 		</dependency>
-	
+
 		<!-- JAXB XML API -->
 		<dependency>
-		    <groupId>jakarta.xml.bind</groupId>
-		    <artifactId>jakarta.xml.bind-api</artifactId>
-		    <version>3.0.0</version>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+			<version>3.0.0</version>
 		</dependency>
-		
-		 <!-- JAXB RI, JAKARA XML Binding -->
+
+		<!-- JAXB RI, JAKARA XML Binding -->
 		<dependency>
-		    <groupId>com.sun.xml.bind</groupId>
-		    <artifactId>jaxb-impl</artifactId>
-		    <version>3.0.0</version>
-		    <scope>runtime</scope>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>3.0.0</version>
+			<scope>runtime</scope>
 		</dependency>
-		
-		<!-- Lombok Library-->
+
+		<!-- Lombok Library -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -167,23 +176,23 @@
 		</dependency>
 		<!-- JMOK FOR JUNIT -->
 		<dependency>
-		    <groupId>org.jmock</groupId>
-		    <artifactId>jmock-junit5</artifactId>
-		    <version>2.12.0</version>
-		    <scope>test</scope>
+			<groupId>org.jmock</groupId>
+			<artifactId>jmock-junit5</artifactId>
+			<version>2.12.0</version>
+			<scope>test</scope>
 		</dependency>
-		
-        <dependency>
-            <groupId>net.sf.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
-            <version>2.7.5</version>
-        </dependency>
-        <!-- OpenCsv Library JAVA8 -->
+
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>2.7.5</version>
+		</dependency>
+		<!-- OpenCsv Library JAVA8 -->
 		<dependency>
 			<groupId>com.opencsv</groupId>
 			<artifactId>opencsv</artifactId>
 			<version>5.6</version>
-		</dependency>		
+		</dependency>
 	</dependencies>
-  
+
 </project>

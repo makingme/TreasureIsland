@@ -1,6 +1,10 @@
 package com.happy.world.vo;
 
-public class ProviderVo {
+import java.io.Serializable;
+
+public class ProviderVo implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	// 발송 채널명 
 	private String CHANNEL;
 	// 발송 비율(백분율)
