@@ -11,12 +11,19 @@ public class SimpleTest {
 		System.out.println("시작");
 		String fileName = "D:\\TEST\\sample_test\\h2.fileq";
 		MVStore s = MVStore.open(fileName);
-		MVMap<String, ProviderVo> map = s.openMap("sample");
+		MVMap<String, Object> map = s.openMap("sample");
 		System.out.println(map.size());
 //		ProviderVo p = new ProviderVo("SMS", 100l, 100f, "KT");
-//		map.put("1", p);
-		ProviderVo p = map.get("1");
-		System.out.println(p.getCHANNEL()+ p.getPROVIDER());
+//		Object b = p;
+//		map.put("1", b);
+		
+		Object o = map.get("1");
+		if(o instanceof ProviderVo) {
+			ProviderVo p = (ProviderVo)o;
+			System.out.println(p.getCHANNEL()+ p.getPROVIDER());
+			
+		}
+//		map.remove("1");
 		s.close();
 	}
 }

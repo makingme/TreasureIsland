@@ -26,7 +26,17 @@ public class MapUsage {
 		}
 		
 	}
+	
+	public static void getMap() {
+		Map<String, Integer> map = new HashMap<String, Integer>(10);
+		map.get("");
+		map.get(null);
+		map.remove("");
+		map.remove(null);
+		
+	}
 	public static void main(String[] args) {
-		MapUsage.mergeMap();
+		//MapUsage.mergeMap();
+		getMap();
 	}
 }

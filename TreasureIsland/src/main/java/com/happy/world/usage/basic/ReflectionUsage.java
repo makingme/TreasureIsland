@@ -19,7 +19,8 @@ public class ReflectionUsage {
 			try {				
 				pf.setAccessible(true);
 				String value = pf.get(object) == null?"": pf.get(object).toString()+"\n";
-				msg+=pf.getName()+" : "+value;
+				Class<?> className =pf.getType();
+				msg+=pf.getName()+"("+className.getName()+") : "+value;
 			} catch (IllegalArgumentException e) {
 				Out.print(e.getMessage());
 			} catch (IllegalAccessException e) {
@@ -44,6 +45,6 @@ public class ReflectionUsage {
 	
 	public static void main(String[] args) throws Exception {
 		ReflectionUsage.printField(b, "basicVo");
-		ReflectionUsage.createClass();
+		//ReflectionUsage.createClass();
 	}
 }

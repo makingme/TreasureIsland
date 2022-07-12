@@ -74,13 +74,20 @@ public class GsonUsage {
 		Out.print(jarray3.toString());
 	}
 	
+	public static void transException() {
+		String data = "{aaa:bbb, aaa}";
+		JsonObject o = gson.fromJson(data, JsonObject.class);
+		System.out.println(o.toString());
+	}
+	
 	public static void main(String[] args) {
-		try {			
-			GsonUsage.fromJsonException();	
-		}catch(Exception e) { Out.print(e.getMessage()); }
-		try {				
-			GsonUsage.toJson();
-		}catch(Exception e) { Out.print(e.getMessage()); }
+//		try {			
+//			GsonUsage.fromJsonException();	
+//		}catch(Exception e) { Out.print(e.getMessage()); }
+//		try {				
+//			GsonUsage.toJson();
+//		}catch(Exception e) { Out.print(e.getMessage()); }
+		transException();
 		
 	}
 }

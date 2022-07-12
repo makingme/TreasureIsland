@@ -12,8 +12,10 @@ public class DateUsage {
 	
 	public static void showCurrentDate() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+		DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("MMdd_HHmmss");
 		LocalDateTime now = LocalDateTime.now();
 		Out.print(dtf.format(now));
+		Out.print(dtf2.format(now));
 		Out.print(System.currentTimeMillis());
 		
 	}
@@ -32,6 +34,6 @@ public class DateUsage {
 	
 	public static void main(String[] args) {
 		DateUsage.showCurrentDate();
-		DateUsage.getNow(null);
+		//DateUsage.getNow(null);
 	}
 }

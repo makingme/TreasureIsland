@@ -17,10 +17,16 @@ public class ReadWorker extends Thread{
 	@Override
 	public void run() {
 		while(isRun) {
-			String data = manager.takeWork();
-			if(data == null) {
-				continue;
-			}			
+//			String data = manager.takeWork();
+//			if(data == null) {
+//				continue;
+//			}			
+			System.out.println("현재 큐 갯수:"+manager.getCount());
+			try {
+				sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 		
 	}

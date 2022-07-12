@@ -130,13 +130,20 @@ public class ListUsage {
 		list.add("108_1213");
 		list.add("2_1213");
 		list.add("9_1213");
-		list.add("9_3813");
+		list.add("sdafds_3813");
 		Collections.sort(list, new Comparator<String>() {
 
 			@Override
 			public int compare(String o1, String o2) {
-				long num1 = Long.parseLong(o1.split("_")[0]);
-				long num2 = Long.parseLong(o2.split("_")[0]);
+				long num1 = 0;
+				long num2 = 0;
+				try {
+					num1 = Long.parseLong(o1.split("_")[0]);
+					num2 = Long.parseLong(o2.split("_")[0]);
+					
+				}catch(Exception e) {
+					return 1;
+				}
 				return num1>num2?1:-1;
 			}
 		});

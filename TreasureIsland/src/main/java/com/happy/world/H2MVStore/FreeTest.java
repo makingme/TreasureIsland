@@ -31,7 +31,7 @@ public class FreeTest {
 			String key = iterator.next();
 			String name = key.split("_")[0];
 			int index = Integer.parseInt(key.split("_")[1]);
-			if(index%2 ==1)System.out.println("데이터 삭제 이상");
+			//if(index%2 ==1)System.out.println("데이터 삭제 이상");
 			if(orderMap.get(name) == null) {
 				orderMap.put(name, index);
 			}else {

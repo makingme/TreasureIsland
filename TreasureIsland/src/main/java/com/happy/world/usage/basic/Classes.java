@@ -110,6 +110,8 @@ public class Classes {
 		Classes.gerenateClass();
 		Out.cutLine();
 		Out.cutLine();
+		Classes a = new Classes();
+		System.out.println(a.getClass().getSimpleName());
 
 	}
 }

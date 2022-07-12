@@ -34,11 +34,13 @@ public class PathUsage {
 		Path p = Paths.get(path);
 		Path p2 = Paths.get(path2);
 		Out.print(p.getParent());
+		Out.print(p.getParent().getParent());
 		Out.print(p2.getParent());
 		Out.print(p2.toString()+File.separator);
 		
 		Out.print(p.getFileSystem());
 		Out.print(p.getRoot());		
+		Out.print(p.getFileName().toString());
 	}
 	
 	public static void updateModifiedTime() throws IOException {
@@ -52,8 +54,8 @@ public class PathUsage {
 	
 	public static void main(String[] args) throws Exception {
 		//PathUsage.isExsist();
-		//PathUsage.filePath();;
-		PathUsage.updateModifiedTime();
+		PathUsage.filePath();;
+		//PathUsage.updateModifiedTime();
 	}
 }
 
