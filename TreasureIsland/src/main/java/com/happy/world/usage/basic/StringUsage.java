@@ -93,8 +93,10 @@ public class StringUsage {
 	public static void format() {
 		String num ="0101234";
 		for(int i =0; i<1000; i++) {
-			Out.print(num+String.format("%04d", i));
+			//Out.print(num+String.format("%04d", i));
 		}
+		Out.print(StringUtils.leftPad(num, 10, "0"));
+		Out.print(String.format("%1$10s", num).replace(" ", "0"));
 	}
 	
 	public static void main(String[] args) {
@@ -109,11 +111,11 @@ public class StringUsage {
 //		Out.cutLine();
 //		StringUsage.capitalize();
 //		Out.cutLine();
-		StringUsage.split();
-		Out.cutLine();
-		//StringUsage.insert();
-		Out.cutLine();
-		//StringUsage.format();
+//		StringUsage.split();
+//		Out.cutLine();
+//		//StringUsage.insert();
+//		Out.cutLine();
+		StringUsage.format();
 		//System.out.println(999/1000);
 	}
 }
