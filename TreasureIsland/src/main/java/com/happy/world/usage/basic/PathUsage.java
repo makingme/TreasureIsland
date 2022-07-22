@@ -52,10 +52,17 @@ public class PathUsage {
 		Out.print(Files.getLastModifiedTime(p));
 	}
 	
+	public static void getName() {
+		String path = "D:\\TEST\\FETCHER\\test.txt";
+		Path p = Paths.get(path);
+		Out.print(p.getFileName());
+	}
+	
 	public static void main(String[] args) throws Exception {
 		//PathUsage.isExsist();
-		PathUsage.filePath();;
+		//PathUsage.filePath();;
 		//PathUsage.updateModifiedTime();
+		getName();
 	}
 }
 
